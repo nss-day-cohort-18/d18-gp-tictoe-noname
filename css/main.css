@@ -1,0 +1,59 @@
+/* TIC TAC TOE BOARD */
+.col-xs-4 {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	border: 2px solid black;
+	padding: 0;
+	margin: 0;
+	background-color: lightgrey;
+}
+
+#blockGrid {
+	margin: 10em 25% 0 25%;
+	width: 50%;
+}
+
+/* START BUTTON */
+#start-Button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 25%;
+	width: 80px;
+	height: 50px;
+}
+
+#start-Button button {
+	background-color: lightgreen;
+	border-radius: 5px;
+	border: 2px solid black;
+	width: 80px;
+	height: 50px;
+}
+
+.invisible {
+	display: none !important;
+	visibility: hidden;
+}
+
+/* XO SELECT */
+#xo-select {
+	background-color: lightblue;
+	max-width: 30%;
+	margin: 0 auto;
+	margin-top: 10em;
+}
+
+#selectX {
+	display: inline-block;
+	font-size: 3em;
+	float: left;
+	background-image: ;
+}
+
+#selectO {
+	display: inline-block;
+	font-size: 3em;
+	float: right;
+	background-image: ;
+}
