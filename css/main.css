@@ -37,6 +37,22 @@ body {
 	height: 50px;
 }
 
+#reset-button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 25%;
+	width: 80px;
+	height: 50px;
+}
+
+#reset-button button {
+	background-color: lightgreen;
+	border-radius: 5px;
+	border: 2px solid black;
+	width: 80px;
+	height: 50px;
+}
+
 .invisible {
 	display: none !important;
 	visibility: hidden;
