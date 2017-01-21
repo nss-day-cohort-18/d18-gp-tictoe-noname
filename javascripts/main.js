@@ -30,6 +30,8 @@ var c3;
 var counter = 0;
 var player1;
 var player2;
+var player1Icon;
+var player2Icon;
 var player1WinStatement = "Player One WINS!!";
 var player2WinStatement = "Player Two WINS!!";
 
@@ -67,6 +69,8 @@ function checkForWin(player, winMessage) {
 		alert(winMessage);
 	} else if (a3 === player && b2 === player && c1 === player) {
 		alert(winMessage);
+	} else if (counter === 9) {
+		alert("Its a TIE!!");
 	}
 	return;
 
@@ -74,15 +78,14 @@ function checkForWin(player, winMessage) {
 
 function reAssignVar(boxID) {
 	if (counter % 2 === 0) {
-		boxID = player2;
-	} else {
 		boxID = player1;
+	} else {
+		boxID = player2;
 	}
 	return boxID;
 };
 
 function playerMoves() {
-
 	counter++;
 	if (counter % 2 === 0) {
 		checkForWin(player2, player2WinStatement);
@@ -92,42 +95,96 @@ function playerMoves() {
 	return;
 }
 
+function backgroundChange () {
+	if ((counter % 2 !== 0 && player1Icon === "o") || (counter % 2 === 0 && player2Icon === "o")) {
+		event.target.className = "col-xs-4 hide-x";
+		event.target.id = "";
+	} else if ((counter % 2 !== 0 && player1Icon === "x") || (counter % 2 === 0 && player2Icon === "x")) {
+		event.target.className = "col-xs-4 hide-o";
+		event.target.id = "";
+	}
+}
+
 a1Click.addEventListener('click', function() {
+	if (a1 === undefined) {
 	a1 = reAssignVar(a1);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.");
+	}
 });
 a2Click.addEventListener('click', function() {
+	if (a2 === undefined) {
 	a2 = reAssignVar(a2);
 	playerMoves();
-
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.");
+	}
 });
 a3Click.addEventListener('click', function() {
+	if (a3 === undefined) {
 	a3 = reAssignVar(a3);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 b1Click.addEventListener('click', function() {
+	if (b1 === undefined) {
 	b1 = reAssignVar(b1);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 b2Click.addEventListener('click', function() {
+	if (b2 === undefined) {
 	b2 = reAssignVar(b2);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 b3Click.addEventListener('click', function() {
+	if (b3 === undefined) {
 	b3 = reAssignVar(b3);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 c1Click.addEventListener('click', function() {
+	if (c1 === undefined) {
 	c1 = reAssignVar(c1);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 c2Click.addEventListener('click', function() {
+	if (c2 === undefined) {
 	c2 = reAssignVar(c2);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 c3Click.addEventListener('click', function() {
+	if (c3 === undefined) {
 	c3 = reAssignVar(c3);
 	playerMoves();
+	backgroundChange();
+	} else {
+		alert("Sorry This Space Is Taken.")
+	}
 });
 
 startButton.addEventListener('click', togglePlayerChoice);
@@ -136,12 +193,16 @@ startButton.addEventListener('click', togglePlayerChoice);
 selectO.addEventListener('click', function () {
 	player1 = true;
 	player2 = false;
+	player1Icon = "o";
+	player2Icon = "x";
 	toggleBoxGrid();
 });
 
 selectX.addEventListener('click', function() {
 	player1 = false;
 	player2 = true;
+	player1Icon = "x";
+	player2Icon = "o"
 	toggleBoxGrid();
 });
 

@@ -1,6 +1,11 @@
 /* TIC TAC TOE BOARD */
+
+body {
+	min-width: 740px;
+}
+
 .col-xs-4 {
-	display: inline-block;
+	display: inline-flex;
 	height: 100px;
 	width: 100px;
 	border: 2px solid black;
@@ -12,6 +17,7 @@
 #blockGrid {
 	margin: 10em 25% 0 25%;
 	width: 50%;
+	min-width: 600px;
 }
 
 /* START BUTTON */
@@ -35,6 +41,73 @@
 	display: none !important;
 	visibility: hidden;
 }
+
+.disable {
+	pointer-events: none;
+}
+
+.hide-x .x-image {
+	visibility: hidden;
+	float: left;
+	display: inline;
+}
+
+.hide-o .o-image {
+	visibility: hidden;
+	float: left;
+}
+
+.o-image {
+	margin-left: -100px
+}
+
+.O {
+	border-radius: 80%;
+}
+
+.clearBlocks {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.bottomBlock {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid red;
+}
+ 
+.topBlock {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid red;
+}
+ 
+.rightBlock {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+   	border-right: 20px solid red;
+}
+  
+.leftBlock {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid red;
+}
+
+
 
 /* XO SELECT */
 #xo-select {
