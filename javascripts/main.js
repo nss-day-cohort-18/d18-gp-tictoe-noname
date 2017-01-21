@@ -6,6 +6,7 @@ var blockGrid = document.getElementById("blockGrid");
 var xoSelect = document.getElementById("xo-select");
 var selectedX = document.getElementById("selectX");
 var selectedO = document.getElementById("selectO");
+var resetButton = document.getElementById("reset-button");
 
 var a1Click = document.getElementById("a1");
 var a2Click = document.getElementById("a2");
@@ -35,6 +36,42 @@ var player2Icon;
 var player1WinStatement = "Player One WINS!!";
 var player2WinStatement = "Player Two WINS!!";
 
+function resetGame() {
+	a1 = undefined;
+	a2 = undefined;
+	a3 = undefined;
+	b1 = undefined;
+	b2 = undefined;
+	b3 = undefined;
+	c1 = undefined;
+	c2 = undefined;
+	c3 = undefined;
+
+	counter = 0;
+	player1 = undefined;
+	player2 = undefined;
+	player1Icon = undefined;
+	player2Icon = undefined;
+
+	a1Click.className = "col-xs-4 hide-x hide-o";
+	a2Click.className = "col-xs-4 hide-x hide-o";
+	a3Click.className = "col-xs-4 hide-x hide-o";
+	b1Click.className = "col-xs-4 hide-x hide-o";
+	b2Click.className = "col-xs-4 hide-x hide-o";
+	b3Click.className = "col-xs-4 hide-x hide-o";
+	c1Click.className = "col-xs-4 hide-x hide-o";
+	c2Click.className = "col-xs-4 hide-x hide-o";
+	c3Click.className = "col-xs-4 hide-x hide-o";
+
+	resetButton.className = "invisible";
+	xoSelect.classList.remove("invisible");
+
+}
+
+function endGame() {
+	blockGrid.className = "invisible";
+	resetButton.classList.remove("invisible");
+}
 
 function togglePlayerChoice() {
 	startButton.className = "invisible";
@@ -55,22 +92,31 @@ function checkForWin(player, winMessage) {
 
 	if (a1 === player && a2 === player && a3 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (b1 === player && b2 === player && b3 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (c1 === player && c2 === player && c3 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (a1 === player && b1 === player && c1 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (a2 === player && b2 === player && c2 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (a3 === player && b3 === player && c3 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (a1 === player && b2 === player && c3 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (a3 === player && b2 === player && c1 === player) {
 		alert(winMessage);
+		endGame();
 	} else if (counter === 9) {
 		alert("Its a TIE!!");
+		endGame();
 	}
 	return;
 
@@ -188,7 +234,8 @@ c3Click.addEventListener('click', function() {
 });
 
 startButton.addEventListener('click', togglePlayerChoice);
-// selectX.addEventListener('click', toggleBoxGrid);
+resetButton.addEventListener('click', resetGame);
+
 
 selectO.addEventListener('click', function () {
 	player1 = true;
